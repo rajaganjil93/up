@@ -20,7 +20,7 @@ WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
 clear
-    wget https://raw.githubusercontent.com/rajaganjil93/up/main/lts/menu.zip
+    wget https://raw.githubusercontent.com/rajaganjil93/up/main/lts2/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/bin
