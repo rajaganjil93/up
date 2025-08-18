@@ -46,7 +46,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://raw.githubusercontent.com/cibut2d/lts/main/up/menu.zip
+    wget https://raw.githubusercontent.com/rajaganjil93/up/main/lts/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/bin
