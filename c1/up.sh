@@ -12,5 +12,5 @@ mv menu/* /usr/local/sbin
 rm -rf menu menu.zip
 
 # Mengunduh versionbaru dan menggantinya menjadi "version"
-wget -q https://raw.githubusercontent.com/cibut2d/c/main/versionbaru -O /usr/local/sbin/version
+wget -q https://raw.githubusercontent.com/rajaganjil93/up/main/versionbaru -O /usr/local/sbin/version
 chmod +x /usr/local/sbin/version
