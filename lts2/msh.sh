@@ -121,8 +121,8 @@ RED="\033[0;31m"
 COLOR1="$(cat /etc/julak/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
 COLBG1="$(cat /etc/julak/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 WH='\033[1;37m'
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+#ISP=$(cat /etc/xray/isp)
+#CITY=$(cat /etc/xray/city)
 author=$(cat /etc/profil)
 TIMES="10"
 CHATID=$(cat /etc/per/id)
@@ -145,8 +145,8 @@ function usernew() {
     CHATID=$(cat /etc/per/id)
     KEY=$(cat /etc/per/token)
     URL="https://api.telegram.org/bot$KEY/sendMessage"
-    ISP=$(cat /etc/xray/isp)
-    CITY=$(cat /etc/xray/city)
+    #ISP=$(cat /etc/xray/isp)
+    #CITY=$(cat /etc/xray/city)
     author=$(cat /etc/profil)
     
     clear
@@ -247,11 +247,10 @@ Password         : $Pass
 Expired          : $exp
 _______________________________
 Host             : $domen
-ISP              : $ISP
-CITY             : $CITY
 Login Limit      : ${iplim} IP
 Port OpenSSH     : 22
 Port Dropbear    : 143, 109
+Port SSH UDP    : 1-65535
 Port SSH WS      : 80, 8080
 Port SSH SSL WS  : 443
 Port SSL/TLS     : 8443, 8880
@@ -265,7 +264,7 @@ Host Slowdns    : $sldomain
 Port Slowdns     : 80, 443, 53
 Pub Key          : $slkey
 _______________________________
-SSH UDP VIRAL : $domen:1-65535@$Login:$Pass
+UDP CUSTOM : $domen:1-65535@$Login:$Pass
 _______________________________
 HTTP COSTUM : $domen:80@$Login:$Pass
 _______________________________
@@ -286,12 +285,11 @@ Username        :  <code>$Login</code>
 Password        :  <code>$Pass</code>
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
-ISP              :  $ISP
-CITY             :  $CITY
 Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
+Port SSH UDP     : 1-65535
 Port SSH WS     :  80, 8080
 Port SSH SSL WS :  443
 Port SSL/TLS     :  8443,8880
@@ -302,7 +300,7 @@ Port OVPN UDP    :  2200
 Proxy Squid        :  3128
 BadVPN UDP       :  7100, 7300, 7300
 ◇━━━━━━━━━━━━━━━━━◇
-SSH UDP VIRAL : <code>$domen:1-65535@$Login:$Pass</code>
+UDP CUSTOM   : <code>$domen:1-65535@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
 HTTP COSTUM WS : <code>$domen:80@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
@@ -330,12 +328,11 @@ Username        :  <code>$Login</code>
 Password        :  <code>$Pass</code>
 Expired On       :  $exp
 ◇━━━━━━━━━━━━━━━━━◇
-ISP              :  $ISP
-CITY             :  $CITY
 Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
+Port SSH UDP     : 1-65535
 Port SSH WS     :  80, 8080
 Port SSH SSL WS :  443
 Port SSL/TLS     :  8443,8880
@@ -346,7 +343,7 @@ Port OVPN UDP    :  2200
 Proxy Squid        :  3128
 BadVPN UDP       :  7100, 7300, 7300
 ◇━━━━━━━━━━━━━━━━━◇
-SSH UDP VIRAL : <code>$domen:1-65535@$Login:$Pass</code>
+UDP CUSTOM   : <code>$domen:1-65535@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
 HTTP COSTUM WS : <code>$domen:80@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
@@ -384,12 +381,13 @@ echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/xra
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$exp"  | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}ISP        ${COLOR1}: ${WH}$ISP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}City       ${COLOR1}: ${WH}$CITY" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+#echo -e "$COLOR1 $NC  ${WH}ISP        ${COLOR1}: ${WH}$ISP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+#echo -e "$COLOR1 $NC  ${WH}City       ${COLOR1}: ${WH}$CITY" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Login Limit${COLOR1}: ${WH}${iplim} IP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}22" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}109, 143" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}SSH UDP    ${COLOR1}: ${WH}1-65535,;1-7000" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}443" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}8443,8880" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -406,7 +404,7 @@ echo -e "$COLOR1 $NC  ${WH}PORT SLWDNS${COLOR1}: ${WH}80,443,53" | tee -a /etc/x
 echo -e "$COLOR1 $NC  ${WH}NAMESERVER ${COLOR1}: ${WH}$sldomain" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}UDP CUSTOM ${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}HTTP COSTUM${COLOR1}: ${WH}$domen:80@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -431,8 +429,8 @@ TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+#ISP=$(cat /etc/xray/isp)
+#CITY=$(cat /etc/xray/city)
 author=$(cat /etc/profil)
 clear
 IP=$(curl -sS ifconfig.me)
@@ -475,11 +473,10 @@ Password         : $Pass
 Expired          : $timer Minutes
 _______________________________
 Host             : $domen
-ISP              : $ISP
-CITY             : $CITY
 Login Limit      : ${iplim} IP
 Port OpenSSH     : 22
 Port Dropbear    : 143, 109
+Port SSH UDP     : 1-65535
 Port SSH WS      : 80, 8080
 Port SSH SSL WS  : 443
 Port SSL/TLS     : 8443, 8880
@@ -493,7 +490,7 @@ Host Slowdns    : $sldomain
 Port Slowdns     : 80, 443, 53
 Pub Key          : $slkey
 _______________________________
-SSH UDP VIRAL : $domen:1-65535@$Login:$Pass
+UDP CUSTOM   : $domen:1-65535@$Login:$Pass
 _______________________________
 HTTP COSTUM : $domen:80@$Login:$Pass
 _______________________________
@@ -514,12 +511,11 @@ Username        :  <code>$Login</code>
 Password        :  <code>$Pass</code>
 Expired On       :  $timer Minutes
 ◇━━━━━━━━━━━━━━━━━◇
-ISP              :  $ISP
-CITY             :  $CITY
 Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
+Port SSH UDP     :  1-65535
 Port SSH WS     :  80, 8080
 Port SSH SSL WS :  443
 Port SSL/TLS     :  8443,8880
@@ -530,7 +526,7 @@ Port OVPN UDP    :  2200
 Proxy Squid        :  3128
 BadVPN UDP       :  7100, 7300, 7300
 ◇━━━━━━━━━━━━━━━━━◇
-SSH UDP VIRAL : <code>$domen:1-65535@$Login:$Pass</code>
+UDP CUSTOM  : <code>$domen:1-65535@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
 HTTP COSTUM WS : <code>$domen:80@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
@@ -558,12 +554,11 @@ Username        :  <code>$Login</code>
 Password        :  <code>$Pass</code>
 Expired On       :  $timer Minutes
 ◇━━━━━━━━━━━━━━━━━◇
-ISP              :  $ISP
-CITY             :  $CITY
 Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
+Port SSH UDP     :  1-65535
 Port SSH WS     :  80, 8080
 Port SSH SSL WS :  443
 Port SSL/TLS     :  8443,8880
@@ -574,7 +569,7 @@ Port OVPN UDP    :  2200
 Proxy Squid        :  3128
 BadVPN UDP       :  7100, 7300, 7300
 ◇━━━━━━━━━━━━━━━━━◇
-SSH UDP VIRAL : <code>$domen:1-65535@$Login:$Pass</code>
+UDP CUSTOM  : <code>$domen:1-65535@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
 HTTP COSTUM WS : <code>$domen:80@$Login:$Pass</code>
 ◇━━━━━━━━━━━━━━━━━◇
@@ -615,12 +610,13 @@ echo -e "$COLOR1 $NC  ${WH}Username   ${COLOR1}: ${WH}$Login"  | tee -a /etc/xra
 echo -e "$COLOR1 $NC  ${WH}Password   ${COLOR1}: ${WH}$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Expired On ${COLOR1}: ${WH}$timer Minutes"  | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}ISP        ${COLOR1}: ${WH}$ISP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}City       ${COLOR1}: ${WH}$CITY" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+#echo -e "$COLOR1 $NC  ${WH}ISP        ${COLOR1}: ${WH}$ISP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+#echo -e "$COLOR1 $NC  ${WH}City       ${COLOR1}: ${WH}$CITY" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Login Limit${COLOR1}: ${WH}${iplim} IP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}22" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}109, 143" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}SSH UDP    ${COLOR1}: ${WH}1-65535" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80,8080" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}443" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}8443,8880" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -637,7 +633,7 @@ echo -e "$COLOR1 $NC  ${WH}PORT SLWDNS${COLOR1}: ${WH}80,443,53" | tee -a /etc/x
 echo -e "$COLOR1 $NC  ${WH}NAMESERVER ${COLOR1}: ${WH}$sldomain" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}PUB KEY    ${COLOR1}: ${WH}$slkey" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}UDP VIRAL${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}UDP CUSTOM ${COLOR1}: ${WH}$domen:1-65535@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}HTTP COSTUM${COLOR1}: ${WH}$domen:80@$Login:$Pass" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━◇ ${NC}" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -659,8 +655,8 @@ TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+#ISP=$(cat /etc/xray/isp)
+#CITY=$(cat /etc/xray/city)
 domain=$(cat /etc/xray/domain)
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/ssh")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
@@ -718,7 +714,6 @@ TEXT="
 <b>  SSH RENEW</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
-<b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$User </code>
 <b>EXPIRED  :</b> <code>$exp4 </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
@@ -738,7 +733,6 @@ TEXT2="
 <b>   TRANSAKSI SUCCES </b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
-<b>ISP      :</b> <code>$CITY </code>
 <b>DATE   :</b> <code>${TIME2} WIB</code>
 <b>DETAIL   :</b> <code>Trx SSH </code>
 <b>USER :</b> <code>${user2}xxx </code>
@@ -814,7 +808,6 @@ TEXT="
 <b>  DELETE SSH OVPN</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
-<b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$Pengguna </code>
 <b>EXPIRED  :</b> <code>$Days </code>
 <code>◇━━━━━━━━━━━━━━◇</code>
@@ -832,8 +825,8 @@ read -n 1 -s -r -p "Press any key to back on menu"
 sshws
 }
 function cekconfig(){
-ISP=$(cat /etc/xray/isp)
-CITY=$(cat /etc/xray/city)
+#ISP=$(cat /etc/xray/isp)
+#CITY=$(cat /etc/xray/city)
 author=$(cat /etc/profil)
 IP=$(curl -sS ifconfig.me);
 domen=`cat /etc/xray/domain`
@@ -1046,7 +1039,6 @@ TEXT="
 <b>  SSH IP LIMIT</b>
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN   :</b> <code>${domain} </code>
-<b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$user </code>
 <b>EXPIRED  :</b> <code>$exp </code>
 <b>IP LIMIT NEW :</b> <code>$iplim IP </code>
@@ -1236,7 +1228,6 @@ TEXT="
 <b>  SSH UNLOK </b>
 <code>◇━━━━━━━━━━━━━━◇
 <b>DOMAIN   :</b> <code>${domain} </code>
-<b>ISP      :</b> <code>$ISP $CITY </code>
 <b>USERNAME :</b> <code>$user </code>
 <b>IP LIMIT  :</b> <code>$iplim IP </code>
 <b>EXPIRED  :</b> <code>$exp </code>
