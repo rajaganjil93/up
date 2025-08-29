@@ -1,4 +1,3 @@
-
 #!/bin/bash
 clear
 
@@ -1259,15 +1258,15 @@ echo -e " $COLOR1╔════════════════════
 echo -e " $COLOR1║${NC}${COLBG1}             ${WH}• SSH PANEL MENU •                     ${NC}$COLOR1║ $NC"
 echo -e " $COLOR1╚════════════════════════════════════════════════════╝${NC}"
 echo -e " $COLOR1╔════════════════════════════════════════════════════╗${NC}"
-echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD AKUN${NC}        ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}CEK USER ONLINE${NC}    $COLOR1║ $NC"
+echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD AKUN${NC}        ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}CEK USER CONFIG${NC}    $COLOR1║ $NC"
 echo -e " $COLOR1║ $NC                                                  ${NC} $COLOR1║ $NC"
-echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL AKUN${NC}      ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}CEK USER CONFIG${NC}    $COLOR1║ $NC"
+echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}RENEW AKUN${NC}      ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}CHANGE IP LIMIT${NC}    $COLOR1║ $NC"
 echo -e " $COLOR1║ $NC                                                  ${NC} $COLOR1║ $NC"
-echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW AKUN${NC}      ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}CHANGE IP LIMIT${NC}    $COLOR1║ $NC"
+echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}DELETE AKUN${NC}     ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}SETTING LOCK LOGIN${NC} $COLOR1║ $NC"
 echo -e " $COLOR1║ $NC                                                  ${NC} $COLOR1║ $NC"
-echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}DELETE AKUN${NC}     ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}SETTING LOCK LOGIN${NC} $COLOR1║ $NC"
+echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}CEK USER ONLINE${NC} ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}UNLOCK LOGIN${NC}       $COLOR1║ $NC"
 echo -e " $COLOR1║ $NC                                                  ${NC} $COLOR1║ $NC"
-echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}         ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}UNLOCK LOGIN${NC}      $COLOR1 ║$NC"
+echo -e " $COLOR1║ $NC  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK${NC}         ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}TRIAL AKUN${NC}        $COLOR1 ║$NC"
 echo -e " $COLOR1╚════════════════════════════════════════════════════╝${NC}"
 echo -e " $COLOR1╔═════════════════════════ ${WH}BY${NC} ${COLOR1}═══════════════════════╗ ${NC}"
 echo -e "  $COLOR1${NC}              ${WH}   • ${author} •                 $COLOR1 $NC"
@@ -1276,14 +1275,14 @@ echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
 01 | 1) clear ; usernew  ;;
-02 | 2) clear ; trial  ;;
-03 | 3) clear ; renew  ;;
-04 | 4) clear ; hapus  ;;
-05 | 5) clear ; cek  ;;
-06 | 6) clear ; cekconfig  ;;
-07 | 7) clear ; limitssh ;;
-08 | 8) clear ; listssh  ;;
-09 | 9) clear ; lockssh  ;;
+02 | 2) clear ; renew  ;;
+03 | 3) clear ; hapus  ;;
+04 | 4) clear ; cek  ;;
+05 | 5) clear ; cekconfig  ;;
+06 | 6) clear ; limitssh  ;;
+07 | 7) clear ; listssh ;;
+08 | 8) clear ; lockssh  ;;
+09 | 9) clear ; trial-ssh ;;
 10 | 10) clear ; hapuslama  ;;
 00 | 0) clear ; menu  ;;
 X  | 0) clear ; sshws ;;
