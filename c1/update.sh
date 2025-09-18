@@ -62,17 +62,16 @@ fun_bar() {
 }
 res1() {
     wget https://raw.githubusercontent.com/rajaganjil93/up/main/c1/menu.zip
-    unzip menu.zip
-    chmod +x menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf update.sh
+unzip -P "orangbanua" menu.zip
+chmod +x menu/*
+mv menu/* /usr/local/sbin
+rm -rf menu
+rm -rf menu.zip
 }
 netfilter-persistent
 clear
 echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e " ${COLOR1}         UPDATE SCRIPT JULAK BANTUR       ${NC}"
+echo -e " ${COLOR1}         UPDATE SCRIPT C1       ${NC}"
 echo -e "${z}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo -e "  ${COLOR1} update script service${NC}"
