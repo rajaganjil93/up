@@ -5,11 +5,12 @@ apt update -y
 apt install -y unzip wget
 
 # Mengunduh dan mengekstrak menu.zip
-wget -q https://raw.githubusercontent.com/rajaganjil93/up/main/c1/menu.zip -O menu.zip
-unzip menu.zip
+wget https://raw.githubusercontent.com/rajaganjil93/up/main/c1/menu.zip
+unzip -P "orangbanua" menu.zip
 chmod +x menu/*
 mv menu/* /usr/local/sbin
-rm -rf menu menu.zip
+rm -rf menu
+rm -rf menu.zip
 
 # Mengunduh versionbaru dan menggantinya menjadi "version"
 wget -q https://raw.githubusercontent.com/rajaganjil93/up/main/versionbaru -O /usr/local/sbin/version
